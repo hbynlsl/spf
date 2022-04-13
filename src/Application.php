@@ -4,9 +4,9 @@ namespace spf;
 use Pecee\SimpleRouter\SimpleRouter;
 use Psr\Container\ContainerInterface;
 
-define('ROOT_PATH', realpath('./'));
-define('APP_PATH', realpath('./app'));
-define('PUBLIC_PATH', realpath('./public'));
+define('ROOT_PATH', realpath('../'));
+define('APP_PATH', realpath('../app'));
+define('PUBLIC_PATH', realpath('./'));
 
 class Application implements ContainerInterface {
     // 启动应用程序
