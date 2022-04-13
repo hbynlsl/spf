@@ -1,0 +1,29 @@
+{
+    "name": "hbynlsl/spf",
+    "description": "simple php framework",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "spf\\": "src/"
+        },
+        "files": [
+            "vendor/pecee/simple-router/helpers.php",
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "hbynlsl",
+            "email": "hbynlsl@hotmail.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.14",
+        "hassankhan/config": "^3.0",
+        "symfony/var-dumper": "^5.4",
+        "old-smoke-gun/php-jwt": "^1.0",
+        "pecee/simple-router": "4.3.7.2",
+        "prinx/dotenv": "^1.0",
+        "psr/container": "^2.0"
+    }
+}
