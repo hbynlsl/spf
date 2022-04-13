@@ -1,7 +1,7 @@
 {
     "name": "hbynlsl/spf",
     "description": "simple php framework",
-    "type": "library",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "spf\\": "src/"
