@@ -7,7 +7,6 @@
             "spf\\": "src/"
         },
         "files": [
-            "../../vendor/pecee/simple-router/helpers.php",
             "src/helpers.php"
         ]
     },
