@@ -1,13 +1,13 @@
 {
     "name": "hbynlsl/spf",
     "description": "simple php framework",
-    "type": "project",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "spf\\": "src/"
         },
         "files": [
-            "vendor/pecee/simple-router/helpers.php",
+            "../../vendor/pecee/simple-router/helpers.php",
             "src/helpers.php"
         ]
     },
