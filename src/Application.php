@@ -1,5 +1,5 @@
 <?php
-namespace spf;
+namespace hbynlsl\spf;
 
 use Pecee\SimpleRouter\SimpleRouter;
 use Psr\Container\ContainerInterface;

@@ -2,7 +2,28 @@
 simple php framework
 
 ## 使用方法
-composer require hbynlsl/spf
+1. 在项目根目录下创建composer.json文件，复制以下内容到composer.json文件中。
+```
+{
+    "require": {
+        "hbynlsl/spf": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "hbynlsl\\spf\\ComposerScript::postInstallCmd"
+        ]
+    }
+}
+```
+2. 执行命令
+``` 
+composer install 
+```
 
 ## spf命令行
 ```
