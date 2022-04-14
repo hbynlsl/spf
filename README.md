@@ -1,8 +1,11 @@
 # spf
+
 simple php framework
 
 ## 使用方法
+
 1. 在项目根目录下创建composer.json文件，复制以下内容到composer.json文件中。
+
 ```
 {
     "require": {
@@ -20,12 +23,16 @@ simple php framework
     }
 }
 ```
+
 2. 执行命令
-``` 
+
+```
 composer install 
+composer run-script post-install-cmd
 ```
 
 ## spf命令行
+
 ```
 php spf serve     启动开发服务器（8090端口）
 php spf list      显示命令列表

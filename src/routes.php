@@ -1,13 +1,9 @@
 <?php
 
-use Pecee\SimpleRouter\SimpleRouter;
+use Pecee\SimpleRouter\SimpleRouter as Router;
 
 // 默认路由
-SimpleRouter::get('/', 'Index@index');
-
-// 企业微信认证
-SimpleRouter::all('/beforeoauth', 'Wework@beforeoauth');
-SimpleRouter::all('/afteroauth', 'Wework@afteroauth');
-
-
-SimpleRouter::get('/my', 'Index@my');
+// SimpleRouter::get('/', 'Index@index');
+Router::get('/', function() {
+    return 'index page.';
+});
