@@ -16,5 +16,7 @@ class ComposerScript {
         mkdir('app/controllers');
         mkdir('app/providers');
         mkdir('app/middlewares');
+        mkdir('runtime');
+        mkdir('runtime/caches');
     }
 }

@@ -22,7 +22,8 @@
         "symfony/var-dumper": "^5.4",
         "old-smoke-gun/php-jwt": "^1.0",
         "pecee/simple-router": "4.3.7.2",
-        "prinx/dotenv": "^1.0"
+        "prinx/dotenv": "^1.0",
+        "j0sh0nat0r/simple-cache": "^1.0"
     },
     "scripts": {
         "post-install-cmd": [

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "231ded7f98a755132efa52767589a814",
+    "content-hash": "0ee77605532e95dc5dd9fd8e2a739c2a",
     "packages": [
         {
             "name": "filp/whoops",
@@ -151,6 +151,55 @@
                 "source": "https://github.com/hassankhan/config/tree/3.0.0"
             },
             "time": "2021-12-30T16:38:05+00:00"
+        },
+        {
+            "name": "j0sh0nat0r/simple-cache",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/J0sh0nat0r/SimpleCache.git",
+                "reference": "e10c1d03f432f43dc43439b98c6caf2cc0bceb2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/J0sh0nat0r/SimpleCache/zipball/e10c1d03f432f43dc43439b98c6caf2cc0bceb2e",
+                "reference": "e10c1d03f432f43dc43439b98c6caf2cc0bceb2e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "J0sh0nat0r\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "J0sh0nat0r",
+                    "email": "josh@joshp.xyz"
+                }
+            ],
+            "description": "A simple yet modular PHP caching library",
+            "support": {
+                "issues": "https://github.com/J0sh0nat0r/SimpleCache/issues",
+                "source": "https://github.com/J0sh0nat0r/SimpleCache/tree/master"
+            },
+            "time": "2018-01-12T21:18:23+00:00"
         },
         {
             "name": "old-smoke-gun/php-jwt",

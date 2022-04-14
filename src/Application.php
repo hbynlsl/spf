@@ -26,6 +26,10 @@ class Application {
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->register();
         }
+        // cache添加到服务容器中
+        static::$instance->register('cache', \J0sh0nat0r\SimpleCache\Cache::class,\J0sh0nat0r\SimpleCache\Drivers\File::class, [
+            'dir'   =>  ROOT_PATH . $configs['cache_dir'],
+        ]);
         // 自动注册服务容器
         foreach ($configs['providers'] as $id => $serviceClass) {
             static::$instance->register($id, $serviceClass);
@@ -48,13 +52,13 @@ class Application {
      * 绑定服务类
      * @param string $id 服务标签名称
      * @param string $serviceClass 服务类名称（含命名空间）
-     * @param array $params 服务类构造参数
+     * @param mixed $params 服务类构造参数（可变参数）
      */
-    public function register(string $id, string $serviceClass, array $params = []) {
+    public function register(string $id, string $serviceClass, ...$params) {
         static::$instance = static::getInstance();
         // 若当前服务类已存在
         if (!static::$instance->has($id)) {
-            static::$instance->services[$id] = new $serviceClass($params);
+            static::$instance->services[$id] = new $serviceClass(...$params);
         }   
         // 返回当前对象（链式操作）
         return static::$instance;
@@ -67,7 +71,11 @@ class Application {
         if (!static::$instance->has($id)) {
             return null;
         }
-        return get_object_vars(static::$instance->services[$id])[$id];   
+        // 返回
+        if (property_exists(static::$instance, $id)) {
+            return get_object_vars(static::$instance->services[$id])[$id]; 
+        }
+        return static::$instance->services[$id];
     }
 
     // 判断服务类是否存在
@@ -95,7 +103,6 @@ class Application {
 
     // 服务对象数组
     protected $services = [];
-
     // 实例对象
     static protected $instance = null;
 }
