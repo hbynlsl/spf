@@ -43,11 +43,13 @@ php spf make:middleware 中间件类名称    创建中间件类
 ```
 
 ## 使用方法
+
 1. 在 routes.php 文件中定义路由
 2. 在 configs/app.php 文件中设置配置信息
 3. 使用命令行启动应用程序、创建类文件
 
 ## 辅助函数
+
 ```
 dump()                      查看调试信息
 dd()                        查看调试信息并结束程序执行
@@ -59,4 +61,5 @@ response()                  获取响应对象
 input(name, default)        获取请求参数
 redirect(url)               页面重定向
 url(name)                   获取路由url
+config(file)		    获取file配置文件中的配置项（/configs/目录下文件，返回array）
 ```

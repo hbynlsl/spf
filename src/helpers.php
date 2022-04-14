@@ -1,9 +1,18 @@
 <?php
 
-use Pecee\SimpleRouter\SimpleRouter as Router;
-use Pecee\Http\Url;
-use Pecee\Http\Response;
+use Noodlehaus\Config;
 use Pecee\Http\Request;
+use Pecee\Http\Response;
+use Pecee\Http\Url;
+use Pecee\SimpleRouter\SimpleRouter as Router;
+
+/**
+ * 获取配置文件信息（返回数组）
+ * @param string $file 配置文件路径
+ */
+function configs(string $file) : array {
+    return Config::load(ROOT_PATH . '/configs/' . $file)->all();
+}
 
 /**
  * Get url for a route by using either name/alias, class or method name.
