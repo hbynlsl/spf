@@ -1,5 +1,6 @@
 <?php
 
+use hbynlsl\spf\Session;
 use Noodlehaus\Config;
 use Pecee\Http\Request;
 use Pecee\Http\Response;
@@ -7,11 +8,30 @@ use Pecee\Http\Url;
 use Pecee\SimpleRouter\SimpleRouter as Router;
 
 /**
- * 获取配置文件信息（返回数组）
- * @param string $file 配置文件路径
+ * session辅助函数
+ * @param string $key session-key
+ * @param mixed $val session-value（若为空，表示获取session值）
  */
-function configs(string $file) : array {
-    return Config::load(ROOT_PATH . '/configs/' . $file)->all();
+function session(string $key, $val = '') {
+    if (!$val) { // 获取或判断session存在性
+        if (substr($key, -1) == '?') {  // 判断是否存在
+            return Session::has($key);
+        }
+        return Session::get($key);
+    }
+    Session::set($key, $val);
+}
+
+/**
+ * 获取配置文件信息
+ * @param string $file 配置文件路径
+ * @param string $key 待获取的配置项（若无，则返回所有配置项）
+ */
+function config(string $file, $key = '') {
+    if (!$key) {
+        return Config::load(ROOT_PATH . '/configs/' . $file)->all();
+    }
+    return Config::load(ROOT_PATH . '/configs/' . $file)->get($key);
 }
 
 /**
@@ -97,21 +117,18 @@ function csrf_token(): ?string
 }
 
 // 服务容器方法
-if (!function_exists('app')) {
-    function app(string $id = '', string $serviceClass = '', array $params = [])
-    {
-        // 获取服务容器对象
-        $app = \hbynlsl\spf\Application::getInstance();
-        // 获取参数个数
-        $numArgs = func_num_args();
-        // 根据参数个数执行不同操作
-        switch ($numArgs) {
-            case 0:
-                return $app;
-            case 1:
-                return $app->get($id);
-            default:
-                $app->register($id, $serviceClass, $params);
-        }
+function app(string $id = '', string $serviceClass = '', array $params = []) {
+    // 获取服务容器对象
+    $app = \hbynlsl\spf\Application::getInstance();
+    // 获取参数个数
+    $numArgs = func_num_args();
+    // 根据参数个数执行不同操作
+    switch ($numArgs) {
+        case 0:
+            return $app;
+        case 1:
+            return $app->get($id);
+        default:
+            $app->register($id, $serviceClass, $params);
     }
 }

@@ -2,13 +2,12 @@
 namespace hbynlsl\spf;
 
 use Pecee\SimpleRouter\SimpleRouter;
-use Psr\Container\ContainerInterface;
 
 define('ROOT_PATH', realpath(__DIR__ . '/../../../../'));
 define('APP_PATH', ROOT_PATH . '/app');
 define('PUBLIC_PATH', ROOT_PATH . '/public');
 
-class Application implements ContainerInterface {
+class Application {
     // 启动应用程序
     static public function runApplication() {
         // 启动应用
@@ -67,8 +66,8 @@ class Application implements ContainerInterface {
         // 若当前服务类已存在
         if (!static::$instance->has($id)) {
             return null;
-        }   
-        return static::$instance->services[$id];
+        }
+        return get_object_vars(static::$instance->services[$id])[$id];   
     }
 
     // 判断服务类是否存在

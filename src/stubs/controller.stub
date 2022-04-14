@@ -2,5 +2,7 @@
 namespace app\controllers;
 
 class {%className%} {
-
+    public function index() {
+        
+    }
 }
