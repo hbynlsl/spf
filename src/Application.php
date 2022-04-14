@@ -4,9 +4,9 @@ namespace hbynlsl\spf;
 use Pecee\SimpleRouter\SimpleRouter;
 use Psr\Container\ContainerInterface;
 
-define('ROOT_PATH', realpath('../'));
-define('APP_PATH', realpath('../app'));
-define('PUBLIC_PATH', realpath('./'));
+define('ROOT_PATH', realpath('./'));
+define('APP_PATH', ROOT_PATH . '/app');
+define('PUBLIC_PATH', ROOT_PATH . '/public');
 
 class Application implements ContainerInterface {
     // 启动应用程序
