@@ -9,7 +9,7 @@ simple php framework
 ```
 {
     "require": {
-        "hbynlsl/spf": "^0.1.0"
+        "hbynlsl/spfframework": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
