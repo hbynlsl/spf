@@ -27,7 +27,18 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php -r \"copy('vendor/hbynlsl/spf/src/spf', 'spf');\""
+            "php -r \"copy('vendor/hbynlsl/spf/src/spf', 'spf');\"",
+            "php -r \"copy('vendor/hbynlsl/spf/src/routes.php', 'routes.php');\"",
+            "php -r \"copy('vendor/hbynlsl/spf/src/.env', '.env');\"",
+            "php -r \"copy('vendor/hbynlsl/spf/src/.env.development', '.env.development');\"",
+            "php -r \"mkdir('configs');\"",
+            "php -r \"copy('vendor/hbynlsl/spf/src/configs/app.php', 'configs/app.php');\"",
+            "php -r \"mkdir('public');\"",
+            "php -r \"copy('vendor/hbynlsl/spf/src/public/index.php', 'public/index.php');\"",
+            "php -r \"mkdir('app');\"",
+            "php -r \"mkdir('app/controllers');\"",
+            "php -r \"mkdir('app/providers');\"",
+            "php -r \"mkdir('app/middlewares');\""
         ]
     }
 }
