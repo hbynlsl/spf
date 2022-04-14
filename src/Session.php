@@ -5,6 +5,12 @@ class Session {
     // session开启状态
     static protected $sessionStatus = false;
 
+    // 获取当前session_id
+    static public function id() {
+        static::_init();
+        return session_id();
+    }
+
     // 获取Session数据
     static public function get(string $key) {
         static::_init();
