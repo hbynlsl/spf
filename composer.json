@@ -24,5 +24,10 @@
         "pecee/simple-router": "4.3.7.2",
         "prinx/dotenv": "^1.0",
         "psr/container": "^2.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r \"copy('vendor/hbynlsl/spf/src/spf', 'spf');\""
+        ]
     }
 }

@@ -1,0 +1,39 @@
+<?php
+namespace app\controllers;
+
+class {%className%} {
+    // GET /resources
+    public function index() {
+
+    }
+
+    // GET /resources/:id
+    public function show() {
+
+    }
+
+    // GET /resources/create
+    public function create() {
+
+    }
+
+    // POST /resources
+    public function store() {
+
+    }
+
+    // GET /resources/:id/edit
+    public function edit() {
+
+    }
+
+    // PUT /resources/:id
+    public function update() {
+
+    }
+
+    // DELETE /resources/:id
+    public function destroy() {
+
+    }
+}

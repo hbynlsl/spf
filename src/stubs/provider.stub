@@ -1,0 +1,6 @@
+<?php
+namespace app\providers;
+
+class {%className%}Service {
+    
+}
