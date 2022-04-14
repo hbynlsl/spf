@@ -4,7 +4,7 @@ namespace hbynlsl\spf;
 use Pecee\SimpleRouter\SimpleRouter;
 use Psr\Container\ContainerInterface;
 
-define('ROOT_PATH', realpath('./'));
+define('ROOT_PATH', realpath(__DIR__ . '/../../../../'));
 define('APP_PATH', ROOT_PATH . '/app');
 define('PUBLIC_PATH', ROOT_PATH . '/public');
 
@@ -32,10 +32,13 @@ class Application implements ContainerInterface {
             static::$instance->register($id, $serviceClass);
         }
         // 绑定全局中间件
-        SimpleRouter::group([
+        $groupConfigs = [
             'namespace' =>  $configs['controller_namespace'],
-            'middleware' =>  $configs['global_middleware'],
-        ], function () {
+        ];
+        if ($configs['global_middleware']) {
+            $groupConfigs['middleware'] = $configs['global_middleware'];
+        }
+        SimpleRouter::group($groupConfigs, function () {
             require_once ROOT_PATH . '/routes.php';
         });
         // 启动应用程序
