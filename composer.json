@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "filp/whoops": "2.7.3",
+        "filp/whoops": "2.8.0",
         "hassankhan/config": "^3.0",
         "symfony/var-dumper": "^4.4",
         "old-smoke-gun/php-jwt": "^1.0",
