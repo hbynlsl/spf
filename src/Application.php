@@ -20,12 +20,7 @@ class Application {
         static::$instance = static::getInstance();
         // 加载配置文件
         $configs = \Noodlehaus\Config::load(ROOT_PATH . '/configs/app.php');
-        // whoops
-        if ($configs['display_errors'] && $configs['show_whoops']) {
-            $whoops = new \Whoops\Run;
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-            $whoops->register();
-        }
+        
         // cache添加到服务容器中
         static::$instance->register('cache', \J0sh0nat0r\SimpleCache\Cache::class,\J0sh0nat0r\SimpleCache\Drivers\File::class, [
             'dir'   =>  ROOT_PATH . $configs['cache_dir'],
