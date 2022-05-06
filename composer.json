@@ -18,7 +18,7 @@
     ],
     "require": {
         "hassankhan/config": "^3.0",
-        "symfony/var-dumper": "^5.4",
+        "symfony/var-dumper": "^4.4",
         "old-smoke-gun/php-jwt": "^1.0",
         "pecee/simple-router": "4.3.7.2",
         "prinx/dotenv": "^1.0",
